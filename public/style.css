@@ -1,0 +1,27 @@
+/*This is a CSS rule */
+body {
+	background-color: #E01B2F;
+	background-size: cover;
+	text-align: center;
+}
+
+h1 {
+    font-family: 'corben';
+}
+
+h2 {
+    font-family: 'Nobile';
+}
+
+.wrapper {
+	width: 1000px;
+	background: white;
+	margin: 40px auto 40px auto;
+	padding: 40px;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
