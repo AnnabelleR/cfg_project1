@@ -1,0 +1,15 @@
+development:
+  sessions:
+    default:
+      hosts:
+        - localhost:27017
+      database: project1
+  options:
+    raise_not_found_error: false
+
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOHQ_URL'] %>
+  options:
+    raise_not_found_error: false

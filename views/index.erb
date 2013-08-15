@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html>
+
 <head>
-    <link rel='stylesheet' href='/bootstrap/css/bootstrap.css'>
-    <link href="/style.css" rel="stylesheet" >
-    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href='/favicon.ico'>
-    <title>Happy Birthday <%= @name %> !!</title>
+    <title>Happy Birthday <%= @name1 %> !!</title>
 </head>
 
 <body>
 <div class='container'>
     <div class='wrapper'>
-    <h1>Happy Birthday <%= @name %>!</h1>
+    <h1>Happy Birthday <%= @name1 %>!</h1>
     <br>
-    <h2>Have a great day, full of joy and happiness</h2>
+    <h2>Have a great day, full of joy and happiness!!</h2>
     </br>
     <h2> <%= @name2 %> </h2>
     <img class='center' src='/birthday.png'>
@@ -23,14 +17,15 @@
 </body>
 
 <footer>
+<div class='container'>
 <form method='post'>
   <p>Send this ecard to a friend!</p>
-  <label>Your Name</label>
+  <label>Your Friend's Name</label>
   <input type='text' name='username'>
   <label>Your Friend's Email</label>
   <input type='text' name='useremail'>
   <input type='submit' class='btn btn-success'>
 </form>
+</div>
 </footer>
 
-</html>

@@ -34,26 +34,45 @@ Pony.options = {
 
 ## Sinatra app
 ## ===========
+get '/' do
+    erb :welcome
+end
 
-
-get '/:name/:name2' do
-    @name = params[:name].capitalize
+get '/:name1/:name2' do
+    @name1 = params[:name1].capitalize
     @name2 = params[:name2].capitalize
     erb :index
 end
 
-get '/party/:name/:name2' do
-    @name = params[:name].capitalize
+get '/party/:name1/:name2' do
+    @name1 = params[:name1].capitalize
     @name2 = params[:name2].capitalize
     erb :index2
 end
 
-post '/' do
-    username = params[:name]
-    useremail = params[:email]
-    @user = User.new(:name => username, :email => useremail)
+post '/:name1/:name2' do
+    name = params[:username]
+    email = params[:useremail]
+    @user = User.new(:name => name, :email => email)
     @user.save
-    Pony.mail(:to => useremail, :subject => "Happy Birthday!! Someone sent you a card!", :body => erb(:index))
+    Pony.mail(:to => email, :subject => "Happy Birthday!!", :body => erb(:email, :layout => false))
     erb :thanks
+end
+
+post '/party/:name1/:name2' do
+    name = params[:username]
+    email = params[:useremail]
+    @user = User.new(:name => name, :email => email)
+    @user.save
+    Pony.mail(:to => email, :subject => "Happy Birthday!!", :body => erb(:email, :layout => false))
+    erb :thanks
+end
+
+
+
+get '/list' do
+
+    @users = User.all
+    erb :list
 
 end
