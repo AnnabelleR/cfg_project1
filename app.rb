@@ -6,7 +6,7 @@ require 'pony'
 ## Mongoid setup
 ## =============
 
-Mongoid.load!("mongoid.yml", :development)
+Mongoid.load!("mongoid.yml")
     
 class User
     include Mongoid::Document
